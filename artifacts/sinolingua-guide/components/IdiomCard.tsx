@@ -22,6 +22,12 @@ const difficultyColors: Record<string, string> = {
   hard: "#F44336",
 };
 
+const difficultyLabels: Record<string, string> = {
+  easy: "лёгкий",
+  medium: "средний",
+  hard: "сложный",
+};
+
 export function IdiomCard({ idiom, onPress }: IdiomCardProps) {
   const colors = useColors();
   const [expanded, setExpanded] = useState(false);
@@ -70,7 +76,7 @@ export function IdiomCard({ idiom, onPress }: IdiomCardProps) {
                 { color: difficultyColors[idiom.difficulty] },
               ]}
             >
-              {idiom.difficulty}
+              {difficultyLabels[idiom.difficulty] ?? idiom.difficulty}
             </Text>
           </View>
           <Feather
@@ -93,7 +99,7 @@ export function IdiomCard({ idiom, onPress }: IdiomCardProps) {
           <Text
             style={[styles.sectionLabel, { color: colors.mutedForeground }]}
           >
-            MEANING
+            ЗНАЧЕНИЕ
           </Text>
           <Text style={[styles.meaning, { color: colors.foreground }]}>
             {idiom.meaning}
@@ -107,7 +113,7 @@ export function IdiomCard({ idiom, onPress }: IdiomCardProps) {
                   { color: colors.mutedForeground },
                 ]}
               >
-                EXAMPLES
+                ПРИМЕРЫ
               </Text>
               {idiom.examples.map((ex, idx) => (
                 <View

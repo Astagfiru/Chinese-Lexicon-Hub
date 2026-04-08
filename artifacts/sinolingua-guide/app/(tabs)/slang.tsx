@@ -13,10 +13,10 @@ import { SlangCard } from "@/components/SlangCard";
 import { slangEntries, SlangEntry } from "@/data/slang";
 
 const TYPES: Array<{ key: SlangEntry["type"] | "all"; label: string }> = [
-  { key: "all", label: "All" },
-  { key: "slang", label: "Slang" },
-  { key: "abbreviation", label: "Abbrev." },
-  { key: "internet", label: "Internet" },
+  { key: "all", label: "Все" },
+  { key: "slang", label: "Сленг" },
+  { key: "abbreviation", label: "Сокращения" },
+  { key: "internet", label: "Интернет" },
 ];
 
 export default function SlangScreen() {
@@ -55,16 +55,16 @@ export default function SlangScreen() {
         ]}
       >
         <Text style={[styles.title, { color: colors.foreground }]}>
-          网络用语 Slang
+          网络用语 Сленг
         </Text>
         <Text style={[styles.subtitle, { color: colors.mutedForeground }]}>
-          Internet slang & modern abbreviations
+          Интернет-сленг и современные сокращения
         </Text>
         <View style={styles.searchRow}>
           <SearchBar
             value={query}
             onChangeText={setQuery}
-            placeholder="Search slang words..."
+            placeholder="Поиск сленговых слов..."
           />
         </View>
         <View style={styles.filters}>
@@ -113,7 +113,7 @@ export default function SlangScreen() {
         ListEmptyComponent={() => (
           <View style={styles.empty}>
             <Text style={[styles.emptyText, { color: colors.mutedForeground }]}>
-              No slang found for "{query}"
+              Ничего не найдено по запросу «{query}»
             </Text>
           </View>
         )}

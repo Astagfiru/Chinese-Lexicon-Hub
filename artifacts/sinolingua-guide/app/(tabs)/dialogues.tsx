@@ -12,12 +12,18 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Feather } from "@expo/vector-icons";
 import * as Haptics from "expo-haptics";
 import { useColors } from "@/hooks/useColors";
-import { dialogues, Dialogue, DialogueStep } from "@/data/dialogues";
+import { dialogues, Dialogue } from "@/data/dialogues";
 
 const diffColors = {
   beginner: "#43A047",
   intermediate: "#FB8C00",
   advanced: "#E53935",
+};
+
+const diffLabels: Record<string, string> = {
+  beginner: "начинающий",
+  intermediate: "средний",
+  advanced: "продвинутый",
 };
 
 function DialogueListItem({
@@ -52,7 +58,7 @@ function DialogueListItem({
           style={[styles.diffBadge, { backgroundColor: color + "18" }]}
         >
           <Text style={[styles.diffText, { color }]}>
-            {dialogue.difficulty}
+            {diffLabels[dialogue.difficulty]}
           </Text>
         </View>
       </View>
@@ -141,7 +147,7 @@ function DialoguePlayer({
         <TouchableOpacity onPress={onBack} style={styles.backBtn}>
           <Feather name="arrow-left" size={20} color={colors.foreground} />
           <Text style={[styles.backText, { color: colors.foreground }]}>
-            Dialogues
+            Диалоги
           </Text>
         </TouchableOpacity>
 
@@ -155,7 +161,7 @@ function DialoguePlayer({
           <Text
             style={[styles.completionTitle, { color: colors.foreground }]}
           >
-            Dialogue Complete!
+            Диалог завершён!
           </Text>
           <Text
             style={[styles.completionChinese, { color: colors.primary }]}
@@ -179,17 +185,17 @@ function DialoguePlayer({
                 { color: colors.mutedForeground },
               ]}
             >
-              Correct answers
+              правильных ответов
             </Text>
           </View>
           <Text
             style={[styles.scoreFeedback, { color: colors.mutedForeground }]}
           >
             {score === total
-              ? "Perfect! Excellent conversation skills."
+              ? "Отлично! Превосходные разговорные навыки."
               : score >= total / 2
-              ? "Good work! Keep practicing."
-              : "Keep studying — you'll improve!"}
+              ? "Хорошая работа! Продолжай практиковаться."
+              : "Продолжай учиться — ты обязательно улучшишься!"}
           </Text>
           <TouchableOpacity
             onPress={handleRestart}
@@ -204,14 +210,14 @@ function DialoguePlayer({
                 { color: colors.primaryForeground },
               ]}
             >
-              Try Again
+              Попробовать снова
             </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={onBack} style={styles.backToListBtn}>
             <Text
               style={[styles.backToListText, { color: colors.mutedForeground }]}
             >
-              Back to Dialogues
+              К списку диалогов
             </Text>
           </TouchableOpacity>
         </View>
@@ -223,6 +229,12 @@ function DialoguePlayer({
     narrator: colors.mutedForeground,
     other: colors.primary,
     you: "#2196F3",
+  };
+
+  const speakerLabels = {
+    narrator: "СЦЕНА",
+    other: "СОБЕСЕДНИК",
+    you: "ВЫ",
   };
 
   return (
@@ -238,7 +250,7 @@ function DialoguePlayer({
         <TouchableOpacity onPress={onBack} style={styles.backBtn}>
           <Feather name="arrow-left" size={20} color={colors.foreground} />
           <Text style={[styles.backText, { color: colors.foreground }]}>
-            Back
+            Назад
           </Text>
         </TouchableOpacity>
         <View>
@@ -267,7 +279,7 @@ function DialoguePlayer({
         </Text>
       </View>
 
-      {/* Progress bar */}
+      {/* Полоса прогресса */}
       <View
         style={[styles.progressBar, { backgroundColor: colors.secondary }]}
       >
@@ -282,7 +294,7 @@ function DialoguePlayer({
         />
       </View>
 
-      {/* Step */}
+      {/* Шаг */}
       <View
         style={[
           styles.stepCard,
@@ -299,11 +311,7 @@ function DialoguePlayer({
             { color: speakerColors[currentStep.speaker] },
           ]}
         >
-          {currentStep.speaker === "narrator"
-            ? "NARRATOR"
-            : currentStep.speaker === "other"
-            ? "THEM"
-            : "YOU"}
+          {speakerLabels[currentStep.speaker]}
         </Text>
         {currentStep.text && (
           <Text style={[styles.stepText, { color: colors.foreground }]}>
@@ -324,7 +332,7 @@ function DialoguePlayer({
         </Text>
       </View>
 
-      {/* Options */}
+      {/* Варианты ответа */}
       {currentStep.options && (
         <View style={styles.optionsSection}>
           {currentStep.options.map((option) => {
@@ -401,7 +409,7 @@ function DialoguePlayer({
         </View>
       )}
 
-      {/* Next button */}
+      {/* Кнопка далее */}
       {(!currentStep.options || selectedOptionId) && (
         <TouchableOpacity
           onPress={handleNext}
@@ -409,8 +417,8 @@ function DialoguePlayer({
         >
           <Text style={[styles.nextText, { color: colors.primaryForeground }]}>
             {currentStepIndex < dialogue.steps.length - 1
-              ? "Continue"
-              : "Finish"}
+              ? "Продолжить"
+              : "Завершить"}
           </Text>
           <Feather name="arrow-right" size={16} color={colors.primaryForeground} />
         </TouchableOpacity>
@@ -449,10 +457,10 @@ export default function DialoguesScreen() {
         ]}
       >
         <Text style={[styles.title, { color: colors.foreground }]}>
-          对话练习 Dialogues
+          对话练习 Диалоги
         </Text>
         <Text style={[styles.subtitle, { color: colors.mutedForeground }]}>
-          Interactive conversation scenarios
+          Интерактивные разговорные сценарии
         </Text>
       </View>
 
@@ -521,7 +529,6 @@ const styles = StyleSheet.create({
   tagRow: { flexDirection: "row", gap: 6 },
   tag: { borderRadius: 8, paddingHorizontal: 8, paddingVertical: 3 },
   tagText: { fontSize: 11, fontFamily: "Inter_500Medium" },
-  // Player
   playerHeader: {
     flexDirection: "row",
     alignItems: "center",
@@ -616,7 +623,6 @@ const styles = StyleSheet.create({
     paddingVertical: 14,
   },
   nextText: { fontSize: 16, fontFamily: "Inter_600SemiBold" },
-  // Completion
   completionCard: {
     borderRadius: 20,
     padding: 24,

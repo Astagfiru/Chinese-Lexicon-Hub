@@ -13,7 +13,7 @@ import * as Haptics from "expo-haptics";
 import { useColors } from "@/hooks/useColors";
 import { toneRules, tonePairs, trickyPronunciations } from "@/data/pronunciation";
 
-const SECTIONS = ["Tones", "Tone Pairs", "Tricky Sounds"] as const;
+const SECTIONS = ["Тоны", "Тональные пары", "Сложные звуки"] as const;
 type Section = (typeof SECTIONS)[number];
 
 const toneColors = ["#E53935", "#43A047", "#1E88E5", "#FB8C00", "#8E24AA"];
@@ -43,12 +43,12 @@ function ToneCard({ rule }: { rule: typeof toneRules[number] }) {
           <Text style={[styles.toneName, { color: colors.foreground }]}>
             {rule.name}
           </Text>
-          <Text style={[styles.toneSymbol, { color: color }]}>
+          <Text style={[styles.toneSymbol, { color }]}>
             {rule.symbol} · {rule.pitch}
           </Text>
         </View>
         <View style={styles.toneExample}>
-          <Text style={[styles.toneChar, { color: color }]}>
+          <Text style={[styles.toneChar, { color }]}>
             {rule.example}
           </Text>
           <Text
@@ -73,7 +73,7 @@ function ToneCard({ rule }: { rule: typeof toneRules[number] }) {
             <Text
               style={[styles.mnemonicLabel, { color: colors.mutedForeground }]}
             >
-              Mnemonic
+              Мнемоника
             </Text>
             <Text style={[styles.mnemonicText, { color: colors.foreground }]}>
               {rule.mnemonic}
@@ -129,6 +129,12 @@ function TrickyCard({ item }: { item: typeof trickyPronunciations[number] }) {
     tricky: "#FB8C00",
   };
   const catColor = categoryColors[item.category] ?? colors.primary;
+  const categoryLabels: Record<string, string> = {
+    tone: "тон",
+    initial: "инициаль",
+    final: "финаль",
+    tricky: "сложный",
+  };
 
   return (
     <TouchableOpacity
@@ -163,7 +169,7 @@ function TrickyCard({ item }: { item: typeof trickyPronunciations[number] }) {
           ]}
         >
           <Text style={[styles.catText, { color: catColor }]}>
-            {item.category}
+            {categoryLabels[item.category]}
           </Text>
         </View>
       </View>
@@ -193,7 +199,7 @@ function TrickyCard({ item }: { item: typeof trickyPronunciations[number] }) {
                   { color: colors.mutedForeground },
                 ]}
               >
-                Similar:
+                Похожее:
               </Text>
               {item.similar.map((s, i) => (
                 <View
@@ -224,7 +230,7 @@ function TrickyCard({ item }: { item: typeof trickyPronunciations[number] }) {
 export default function PronunciationScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
-  const [section, setSection] = useState<Section>("Tones");
+  const [section, setSection] = useState<Section>("Тоны");
 
   const topPad = Platform.OS === "web" ? 67 : insets.top;
   const bottomPad = Platform.OS === "web" ? 34 + 84 : insets.bottom + 84;
@@ -242,10 +248,10 @@ export default function PronunciationScreen() {
         ]}
       >
         <Text style={[styles.title, { color: colors.foreground }]}>
-          发音 Pronunciation
+          发音 Произношение
         </Text>
         <Text style={[styles.subtitle, { color: colors.mutedForeground }]}>
-          Tones, sounds & pinyin guide
+          Тоны, звуки и руководство по пиньиню
         </Text>
         <View style={styles.tabs}>
           {SECTIONS.map((s) => (
@@ -288,7 +294,7 @@ export default function PronunciationScreen() {
         }}
         showsVerticalScrollIndicator={false}
       >
-        {section === "Tones" && (
+        {section === "Тоны" && (
           <>
             <View
               style={[
@@ -300,7 +306,7 @@ export default function PronunciationScreen() {
               <Text
                 style={[styles.infoText, { color: colors.mutedForeground }]}
               >
-                Mandarin Chinese has 4 tones + 1 neutral tone. The same syllable with different tones has completely different meanings. Tap each tone to learn more.
+                В мандаринском китайском 4 тона + 1 нейтральный. Один и тот же слог с разными тонами имеет совершенно разные значения. Нажми на тон, чтобы узнать подробнее.
               </Text>
             </View>
             {toneRules.map((rule) => (
@@ -309,7 +315,7 @@ export default function PronunciationScreen() {
           </>
         )}
 
-        {section === "Tone Pairs" && (
+        {section === "Тональные пары" && (
           <>
             <View
               style={[
@@ -321,7 +327,7 @@ export default function PronunciationScreen() {
               <Text
                 style={[styles.infoText, { color: colors.mutedForeground }]}
               >
-                The same syllable with different tones has totally different meanings. These minimal pairs are essential to memorize.
+                Один слог с разными тонами — полностью разные значения. Эти минимальные пары необходимо запомнить.
               </Text>
             </View>
             {tonePairs.map((pair) => (
@@ -330,7 +336,7 @@ export default function PronunciationScreen() {
           </>
         )}
 
-        {section === "Tricky Sounds" && (
+        {section === "Сложные звуки" && (
           <>
             <View
               style={[
@@ -342,7 +348,7 @@ export default function PronunciationScreen() {
               <Text
                 style={[styles.infoText, { color: colors.mutedForeground }]}
               >
-                These sounds and tone rules trip up most learners. Tap each card for pronunciation tips.
+                Эти звуки и тональные правила вызывают трудности у большинства студентов. Нажми на карточку для получения советов.
               </Text>
             </View>
             {trickyPronunciations.map((item) => (
@@ -375,7 +381,7 @@ const styles = StyleSheet.create({
     paddingVertical: 6,
     borderWidth: 1,
   },
-  tabText: { fontSize: 13, fontFamily: "Inter_500Medium" },
+  tabText: { fontSize: 12, fontFamily: "Inter_500Medium" },
   infoBox: {
     flexDirection: "row",
     gap: 8,
@@ -391,7 +397,6 @@ const styles = StyleSheet.create({
     fontFamily: "Inter_400Regular",
     lineHeight: 18,
   },
-  // Tone cards
   toneCard: {
     borderRadius: 14,
     padding: 14,
@@ -447,7 +452,6 @@ const styles = StyleSheet.create({
     marginBottom: 3,
   },
   mnemonicText: { fontSize: 13, fontFamily: "Inter_500Medium" },
-  // Pair cards
   pairCard: {
     borderRadius: 14,
     padding: 14,
@@ -469,7 +473,6 @@ const styles = StyleSheet.create({
   pairPinyin: { fontSize: 16, fontFamily: "Inter_700Bold" },
   pairMeaning: { fontSize: 12, fontFamily: "Inter_400Regular", marginTop: 2 },
   pairNote: { fontSize: 12, fontFamily: "Inter_400Regular", fontStyle: "italic" },
-  // Tricky cards
   trickyCard: {
     borderRadius: 14,
     padding: 14,

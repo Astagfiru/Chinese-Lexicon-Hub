@@ -13,27 +13,27 @@ function NativeTabLayout() {
     <NativeTabs>
       <NativeTabs.Trigger name="index">
         <Icon sf={{ default: "house", selected: "house.fill" }} />
-        <Label>Home</Label>
+        <Label>Главная</Label>
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="idioms">
         <Icon sf={{ default: "book", selected: "book.fill" }} />
-        <Label>Chengyu</Label>
+        <Label>成语</Label>
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="slang">
         <Icon sf={{ default: "bolt", selected: "bolt.fill" }} />
-        <Label>Slang</Label>
+        <Label>Сленг</Label>
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="pronunciation">
         <Icon sf={{ default: "mic", selected: "mic.fill" }} />
-        <Label>Tones</Label>
+        <Label>Тоны</Label>
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="dialogues">
         <Icon sf={{ default: "message", selected: "message.fill" }} />
-        <Label>Practice</Label>
+        <Label>Диалоги</Label>
       </NativeTabs.Trigger>
       <NativeTabs.Trigger name="culture">
         <Icon sf={{ default: "globe", selected: "globe.americas.fill" }} />
-        <Label>Culture</Label>
+        <Label>Культура</Label>
       </NativeTabs.Trigger>
     </NativeTabs>
   );
@@ -85,7 +85,7 @@ function ClassicTabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: "Home",
+          title: "Главная",
           tabBarIcon: ({ color }) =>
             isIOS ? (
               <SymbolView name="house" tintColor={color} size={22} />
@@ -109,7 +109,7 @@ function ClassicTabLayout() {
       <Tabs.Screen
         name="slang"
         options={{
-          title: "Slang",
+          title: "Сленг",
           tabBarIcon: ({ color }) =>
             isIOS ? (
               <SymbolView name="bolt" tintColor={color} size={22} />
@@ -121,7 +121,7 @@ function ClassicTabLayout() {
       <Tabs.Screen
         name="popculture"
         options={{
-          title: "Pop",
+          title: "Поп",
           tabBarIcon: ({ color }) =>
             isIOS ? (
               <SymbolView name="film" tintColor={color} size={22} />
@@ -133,7 +133,7 @@ function ClassicTabLayout() {
       <Tabs.Screen
         name="pronunciation"
         options={{
-          title: "Tones",
+          title: "Тоны",
           tabBarIcon: ({ color }) =>
             isIOS ? (
               <SymbolView name="mic" tintColor={color} size={22} />
@@ -145,7 +145,7 @@ function ClassicTabLayout() {
       <Tabs.Screen
         name="dialogues"
         options={{
-          title: "Practice",
+          title: "Диалоги",
           tabBarIcon: ({ color }) =>
             isIOS ? (
               <SymbolView name="message" tintColor={color} size={22} />
@@ -157,7 +157,7 @@ function ClassicTabLayout() {
       <Tabs.Screen
         name="culture"
         options={{
-          title: "Culture",
+          title: "Культура",
           tabBarIcon: ({ color }) =>
             isIOS ? (
               <SymbolView name="globe" tintColor={color} size={22} />

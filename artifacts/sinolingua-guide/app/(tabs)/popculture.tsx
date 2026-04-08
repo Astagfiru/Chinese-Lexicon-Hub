@@ -16,12 +16,12 @@ const SOURCE_TYPES: Array<{
   key: PopCulturePhrase["sourceType"] | "all";
   label: string;
 }> = [
-  { key: "all", label: "All" },
-  { key: "meme", label: "Meme" },
-  { key: "drama", label: "Drama" },
-  { key: "movie", label: "Movie" },
-  { key: "variety", label: "Variety" },
-  { key: "game", label: "Game" },
+  { key: "all", label: "Все" },
+  { key: "meme", label: "Мем" },
+  { key: "drama", label: "Дорама" },
+  { key: "movie", label: "Кино" },
+  { key: "variety", label: "Шоу" },
+  { key: "game", label: "Игры" },
 ];
 
 export default function PopCultureScreen() {
@@ -65,16 +65,16 @@ export default function PopCultureScreen() {
         ]}
       >
         <Text style={[styles.title, { color: colors.foreground }]}>
-          流行文化 Pop Culture
+          流行文化 Поп-культура
         </Text>
         <Text style={[styles.subtitle, { color: colors.mutedForeground }]}>
-          Viral phrases, memes & media
+          Вирусные фразы, мемы и медиа
         </Text>
         <View style={styles.searchRow}>
           <SearchBar
             value={query}
             onChangeText={setQuery}
-            placeholder="Search phrases, sources..."
+            placeholder="Поиск фраз, источников..."
           />
         </View>
         <View style={styles.filters}>
@@ -125,7 +125,7 @@ export default function PopCultureScreen() {
             <Text
               style={[styles.emptyText, { color: colors.mutedForeground }]}
             >
-              No phrases found for "{query}"
+              Ничего не найдено по запросу «{query}»
             </Text>
           </View>
         )}

@@ -14,251 +14,251 @@ export const idioms: Idiom[] = [
     id: 1,
     idiom: "一石二鸟",
     pinyin: "yī shí èr niǎo",
-    translation: "Kill two birds with one stone",
-    meaning: "Accomplish two things with a single action; solve two problems at once with minimal effort.",
+    translation: "Одним камнем двух птиц",
+    meaning: "Одним действием достичь двух целей; решить две задачи с минимальными усилиями. Полный аналог русской поговорки.",
     examples: [
-      { sentence: "这次旅行既能出差又能游玩，真是一石二鸟。", translation: "This trip serves both business and leisure — truly killing two birds with one stone." },
-      { sentence: "学中文的同时了解文化，一石二鸟。", translation: "Learning Chinese while understanding culture — two birds with one stone." }
+      { sentence: "这次旅行既能出差又能游玩，真是一石二鸟。", translation: "Эта поездка — и командировка, и отдых. Настоящий принцип «одним камнем двух птиц»." },
+      { sentence: "学中文的同时了解文化，一石二鸟。", translation: "Учить китайский и одновременно изучать культуру — убить двух зайцев одним выстрелом." }
     ],
     difficulty: "easy",
-    tags: ["efficiency", "planning"]
+    tags: ["эффективность", "планирование"]
   },
   {
     id: 2,
     idiom: "马到成功",
     pinyin: "mǎ dào chénggōng",
-    translation: "Immediate success upon arrival",
-    meaning: "Swift success in whatever one undertakes; used to wish someone good luck.",
+    translation: "Конь придёт — успех придёт",
+    meaning: "Мгновенный успех в любом деле с первой попытки. Используется как пожелание удачи перед важным событием.",
     examples: [
-      { sentence: "祝你考试马到成功！", translation: "Wishing you instant success on your exam!" },
-      { sentence: "新公司开业，马到成功！", translation: "For the new company's opening — may success come swiftly!" }
+      { sentence: "祝你考试马到成功！", translation: "Желаю тебе на экзамене мгновенного успеха!" },
+      { sentence: "新公司开业，马到成功！", translation: "На открытие новой компании — желаем скорого успеха!" }
     ],
     difficulty: "easy",
-    tags: ["luck", "success", "greetings"]
+    tags: ["удача", "успех", "пожелания"]
   },
   {
     id: 3,
     idiom: "半途而废",
     pinyin: "bàn tú ér fèi",
-    translation: "Give up halfway",
-    meaning: "To abandon an undertaking before its completion; to stop midway. Used as a warning against quitting.",
+    translation: "Бросить на полпути",
+    meaning: "Оставить дело незавершённым; отступить до конца. Используется как предупреждение против прекращения работы.",
     examples: [
-      { sentence: "学习语言不能半途而废，要坚持。", translation: "One must not give up halfway when learning a language — persevere." },
-      { sentence: "他总是半途而废，从来没完成过任何事。", translation: "He always quits halfway and never finishes anything." }
+      { sentence: "学习语言不能半途而废，要坚持。", translation: "Нельзя бросать изучение языка на полпути — надо упорствовать." },
+      { sentence: "他总是半途而废，从来没完成过任何事。", translation: "Он всегда бросает дела на полдороге и никогда ничего не доводит до конца." }
     ],
     difficulty: "easy",
-    tags: ["perseverance", "warning"]
+    tags: ["упорство", "предупреждение"]
   },
   {
     id: 4,
     idiom: "亡羊补牢",
     pinyin: "wáng yáng bǔ láo",
-    translation: "Mend the fold after the sheep are lost",
-    meaning: "Better late than never; it is not too late to correct a mistake after the fact.",
+    translation: "Чинить загон, когда овцы уже убежали",
+    meaning: "Лучше поздно, чем никогда; исправить ошибку постфактум всё равно полезно. Аналог: «После драки кулаками не машут» — но с оптимистичным смыслом.",
     examples: [
-      { sentence: "虽然来不及了，但亡羊补牢，为时未晚。", translation: "Even though it is late, mending the fold now is still worthwhile." },
-      { sentence: "发现错误就要改正，亡羊补牢。", translation: "When an error is found, correct it — better late than never." }
+      { sentence: "虽然来不及了，但亡羊补牢，为时未晚。", translation: "Хоть и поздновато, но починить загон после побега овец всё же не бесполезно." },
+      { sentence: "发现错误就要改正，亡羊补牢。", translation: "Нашёл ошибку — исправь: лучше поздно, чем никогда." }
     ],
     difficulty: "medium",
-    tags: ["wisdom", "correction"]
+    tags: ["мудрость", "исправление"]
   },
   {
     id: 5,
     idiom: "画蛇添足",
     pinyin: "huà shé tiān zú",
-    translation: "Draw legs on a snake",
-    meaning: "To ruin something by adding unnecessary embellishments; overdoing things leads to failure.",
+    translation: "Нарисовать змее лапы",
+    meaning: "Испортить хорошее дело лишними украшениями; переусердствовать и тем самым всё погубить. «Лишнее — лишнее».",
     examples: [
-      { sentence: "文章已经很好了，再加修饰就是画蛇添足。", translation: "The essay is already excellent — adding more would be drawing legs on a snake." },
-      { sentence: "他的解释画蛇添足，反而让人更困惑。", translation: "His explanation overdid it and made people even more confused." }
+      { sentence: "文章已经很好了，再加修饰就是画蛇添足。", translation: "Статья уже хороша — ещё добавлять — значит рисовать змее лапы." },
+      { sentence: "他的解释画蛇添足，反而让人更困惑。", translation: "Его объяснение оказалось лишним и только запутало людей ещё больше." }
     ],
     difficulty: "medium",
-    tags: ["warning", "simplicity"]
+    tags: ["предупреждение", "простота"]
   },
   {
     id: 6,
     idiom: "对牛弹琴",
     pinyin: "duì niú tán qín",
-    translation: "Play the lute to a cow",
-    meaning: "To talk reason to a person who cannot or will not understand; casting pearls before swine.",
+    translation: "Играть на лютне перед быком",
+    meaning: "Объяснять что-то тому, кто не может или не хочет понять. Аналог русского «метать бисер перед свиньями».",
     examples: [
-      { sentence: "跟他讲道理简直是对牛弹琴。", translation: "Reasoning with him is like playing lute to a cow." },
-      { sentence: "不懂艺术的人看这幅画，就像对牛弹琴。", translation: "Someone who doesn't understand art viewing this painting — like playing lute to a cow." }
+      { sentence: "跟他讲道理简直是对牛弹琴。", translation: "Убеждать его логикой — всё равно что играть на лютне перед быком." },
+      { sentence: "不懂艺术的人看这幅画，就像对牛弹琴。", translation: "Человек без понимания искусства, смотрящий на эту картину, — как бык перед лютнистом." }
     ],
     difficulty: "medium",
-    tags: ["communication", "frustration"]
+    tags: ["коммуникация", "бесполезность"]
   },
   {
     id: 7,
     idiom: "塞翁失马",
     pinyin: "sài wēng shī mǎ",
-    translation: "The old man lost his horse",
-    meaning: "A blessing in disguise; a seeming misfortune can turn into good fortune. From a famous Huainanzi story.",
+    translation: "Старик потерял коня",
+    meaning: "Нет худа без добра; кажущееся несчастье может обернуться удачей. Отсылка к знаменитой притче из «Хуайнань-цзы».",
     examples: [
-      { sentence: "失去了那份工作反而找到了更好的机会，真是塞翁失马。", translation: "Losing that job led to a better opportunity — truly a blessing in disguise." },
-      { sentence: "塞翁失马，焉知非福？", translation: "The old man lost his horse — who knows if it isn't a blessing?" }
+      { sentence: "失去了那份工作反而找到了更好的机会，真是塞翁失马。", translation: "Потерял работу, зато нашёл лучшую — нет худа без добра." },
+      { sentence: "塞翁失马，焉知非福？", translation: "Старик потерял коня — кто знает, может это и к счастью?" }
     ],
     difficulty: "hard",
-    tags: ["philosophy", "fortune", "classical"]
+    tags: ["философия", "судьба", "классика"]
   },
   {
     id: 8,
     idiom: "掩耳盗铃",
     pinyin: "yǎn ěr dào líng",
-    translation: "Cover ears while stealing a bell",
-    meaning: "Self-deception; trying to deceive others while only deceiving oneself.",
+    translation: "Заткнуть уши, крадя колокол",
+    meaning: "Самообман; пытаться обмануть других, обманывая прежде всего себя. «Прятать голову в песок».",
     examples: [
-      { sentence: "不面对问题，只是掩耳盗铃而已。", translation: "Not facing the problem is just self-deception." },
-      { sentence: "假装不知道，这是掩耳盗铃的做法。", translation: "Pretending not to know — that's covering your ears while stealing the bell." }
+      { sentence: "不面对问题，只是掩耳盗铃而已。", translation: "Не смотреть проблеме в лицо — значит затыкать уши, крадя колокол." },
+      { sentence: "假装不知道，这是掩耳盗铃的做法。", translation: "Притворяться незнающим — это и есть «заткнуть уши и красть колокол»." }
     ],
     difficulty: "hard",
-    tags: ["self-deception", "wisdom"]
+    tags: ["самообман", "мудрость"]
   },
   {
     id: 9,
     idiom: "青出于蓝",
     pinyin: "qīng chū yú lán",
-    translation: "Indigo comes from the indigo plant",
-    meaning: "The student surpasses the teacher; the younger generation outperforms the older. A compliment.",
+    translation: "Синева рождается из растения индиго",
+    meaning: "Ученик превзошёл учителя; молодое поколение превосходит старшее. Используется как комплимент.",
     examples: [
-      { sentence: "他的成就已经超过了老师，真是青出于蓝。", translation: "His achievements have surpassed his teacher — truly indigo from the plant." },
-      { sentence: "青出于蓝而胜于蓝，这是教育的最大成功。", translation: "When a student surpasses their teacher, that is the greatest success of education." }
+      { sentence: "他的成就已经超过了老师，真是青出于蓝。", translation: "Его достижения уже превзошли учителя — воистину: синева рождается из индиго." },
+      { sentence: "青出于蓝而胜于蓝，这是教育的最大成功。", translation: "Когда ученик превосходит учителя — это наибольший успех образования." }
     ],
     difficulty: "hard",
-    tags: ["education", "progress", "praise"]
+    tags: ["образование", "прогресс", "похвала"]
   },
   {
     id: 10,
     idiom: "守株待兔",
     pinyin: "shǒu zhū dài tù",
-    translation: "Guard the stump waiting for rabbits",
-    meaning: "Relying on luck rather than effort; waiting passively for fortune instead of taking action.",
+    translation: "Сторожить пень в ожидании зайца",
+    meaning: "Полагаться на удачу вместо усилий; пассивно ждать, пока счастье само придёт. «Ждать у моря погоды».",
     examples: [
-      { sentence: "光是守株待兔，不去努力找工作，是不行的。", translation: "Just waiting for luck without actively job hunting won't work." },
-      { sentence: "守株待兔的人永远得不到真正的成功。", translation: "Those who wait passively for luck will never achieve true success." }
+      { sentence: "光是守株待兔，不去努力找工作，是不行的。", translation: "Только ждать удачи, не ища работу активно, — значит сторожить пень." },
+      { sentence: "守株待兔的人永远得不到真正的成功。", translation: "Те, кто ждёт удачи пассивно, никогда не достигнут настоящего успеха." }
     ],
     difficulty: "medium",
-    tags: ["effort", "warning", "laziness"]
+    tags: ["усилие", "предупреждение", "лень"]
   },
   {
     id: 11,
     idiom: "纸上谈兵",
     pinyin: "zhǐ shàng tán bīng",
-    translation: "Fight battles only on paper",
-    meaning: "Armchair strategizing without practical experience; theoretical knowledge without real application.",
+    translation: "Воевать только на бумаге",
+    meaning: "Стратегия в теории без практического опыта; знания без применения. «Теоретик в кресле».",
     examples: [
-      { sentence: "只读书不实践，只是纸上谈兵。", translation: "Only reading without practice is just paper warfare." },
-      { sentence: "他的方案听起来不错，但都是纸上谈兵。", translation: "His plan sounds good but it's all just armchair strategy." }
+      { sentence: "只读书不实践，只是纸上谈兵。", translation: "Только читать, не практикуясь — чистая «война на бумаге»." },
+      { sentence: "他的方案听起来不错，但都是纸上谈兵。", translation: "Его план звучит неплохо, но это всё теория без практики." }
     ],
     difficulty: "medium",
-    tags: ["practice", "theory", "criticism"]
+    tags: ["практика", "теория", "критика"]
   },
   {
     id: 12,
     idiom: "一箭双雕",
     pinyin: "yī jiàn shuāng diāo",
-    translation: "One arrow, two eagles",
-    meaning: "Achieve two goals with one effort; similar to 'kill two birds with one stone' but more elegant.",
+    translation: "Одной стрелой двух орлов",
+    meaning: "Достичь двух целей одним действием. Более изысканный вариант «一石二鸟», часто используется в официальном контексте.",
     examples: [
-      { sentence: "这个策略可以一箭双雕，既节省成本又提高效率。", translation: "This strategy achieves two goals at once — saving costs and improving efficiency." }
+      { sentence: "这个策略可以一箭双雕，既节省成本又提高效率。", translation: "Эта стратегия убивает двух зайцев: экономит расходы и повышает эффективность." }
     ],
     difficulty: "easy",
-    tags: ["efficiency", "strategy"]
+    tags: ["эффективность", "стратегия"]
   },
   {
     id: 13,
     idiom: "水落石出",
     pinyin: "shuǐ luò shí chū",
-    translation: "When the water recedes, the rocks appear",
-    meaning: "The truth will emerge in the end; every mystery will eventually be solved.",
+    translation: "Вода спадёт — камни появятся",
+    meaning: "Правда обязательно выйдет наружу; любая тайна в конце концов раскроется. «Шила в мешке не утаишь».",
     examples: [
-      { sentence: "不用着急，事情总会水落石出的。", translation: "No need to worry — the truth will surface eventually." }
+      { sentence: "不用着急，事情总会水落石出的。", translation: "Не торопись — рано или поздно правда выплывет на поверхность." }
     ],
     difficulty: "medium",
-    tags: ["truth", "patience"]
+    tags: ["правда", "терпение"]
   },
   {
     id: 14,
     idiom: "三人行，必有我师",
     pinyin: "sān rén xíng, bì yǒu wǒ shī",
-    translation: "Among three walkers, one is surely my teacher",
-    meaning: "Everyone has something to teach you; humility in learning from others. From Confucius.",
+    translation: "Среди троих путников обязательно найдётся мой учитель",
+    meaning: "Каждый человек может чему-то тебя научить; смирение в обучении. Из Конфуция (Луньюй).",
     examples: [
-      { sentence: "三人行，必有我师，要向每个人学习。", translation: "Among three travelers, one is your teacher — learn from everyone." }
+      { sentence: "三人行，必有我师，要向每个人学习。", translation: "Среди троих путников есть мой учитель — учись у каждого." }
     ],
     difficulty: "easy",
-    tags: ["learning", "humility", "Confucius"]
+    tags: ["обучение", "смирение", "Конфуций"]
   },
   {
     id: 15,
     idiom: "破釜沉舟",
     pinyin: "pò fǔ chén zhōu",
-    translation: "Break the cauldrons and sink the boats",
-    meaning: "Burn one's bridges; commit completely to a course of action with no retreat. Historical allusion to general Xiang Yu.",
+    translation: "Разбить котлы и потопить лодки",
+    meaning: "Сжечь мосты; полностью посвятить себя делу без возможности отступления. Отсылка к полководцу Сян Юю.",
     examples: [
-      { sentence: "他破釜沉舟，辞掉工作全力创业。", translation: "He burned his bridges, quit his job, and threw everything into his startup." }
+      { sentence: "他破釜沉舟，辞掉工作全力创业。", translation: "Он сжёг мосты: бросил работу и целиком ушёл в стартап." }
     ],
     difficulty: "hard",
-    tags: ["determination", "commitment", "history"]
+    tags: ["решимость", "обязательство", "история"]
   },
   {
     id: 16,
     idiom: "功夫不负有心人",
     pinyin: "gōngfū bù fù yǒuxīn rén",
-    translation: "Effort never disappoints the committed",
-    meaning: "Hard work and dedication will always pay off in the end; perseverance leads to success.",
+    translation: "Усилия никогда не подводят того, кто стремится",
+    meaning: "Упорный труд и целеустремлённость обязательно приносят плоды. «Терпение и труд всё перетрут».",
     examples: [
-      { sentence: "功夫不负有心人，你的努力一定会有回报。", translation: "Hard work never disappoints — your efforts will surely be rewarded." }
+      { sentence: "功夫不负有心人，你的努力一定会有回报。", translation: "Труд не подведёт целеустремлённого — твои усилия обязательно окупятся." }
     ],
     difficulty: "easy",
-    tags: ["encouragement", "perseverance", "success"]
+    tags: ["вдохновение", "упорство", "успех"]
   },
   {
     id: 17,
     idiom: "笑里藏刀",
     pinyin: "xiào lǐ cáng dāo",
-    translation: "A dagger hidden in a smile",
-    meaning: "Smiling outwardly while harboring malicious intent; a hypocrite or two-faced person.",
+    translation: "Нож в улыбке",
+    meaning: "Улыбаться снаружи, скрывая злой умысел. Двуличный, лицемерный человек. «Волк в овечьей шкуре».",
     examples: [
-      { sentence: "他表面上很友好，其实笑里藏刀。", translation: "He seems friendly on the surface but hides a dagger in his smile." }
+      { sentence: "他表面上很友好，其实笑里藏刀。", translation: "На вид дружелюбный, но за улыбкой прячет нож." }
     ],
     difficulty: "medium",
-    tags: ["warning", "character", "deception"]
+    tags: ["предупреждение", "характер", "обман"]
   },
   {
     id: 18,
     idiom: "三十六计，走为上计",
     pinyin: "sānshíliù jì, zǒu wéi shàng jì",
-    translation: "Of the thirty-six stratagems, fleeing is the best",
-    meaning: "When all else fails, retreat is the wisest option. From the classic military text.",
+    translation: "Из тридцати шести стратагем бегство — лучшая",
+    meaning: "Когда всё плохо, отступление — мудрейший выбор. Из классического военного трактата «Тридцать шесть стратагем».",
     examples: [
-      { sentence: "形势不好，三十六计走为上计。", translation: "The situation is bad — of all strategies, retreat is the best." }
+      { sentence: "形势不好，三十六计走为上计。", translation: "Ситуация плохая — из всех стратагем отступление лучшее." }
     ],
     difficulty: "hard",
-    tags: ["strategy", "military", "wisdom"]
+    tags: ["стратегия", "военное дело", "мудрость"]
   },
   {
     id: 19,
     idiom: "一鸣惊人",
     pinyin: "yī míng jīng rén",
-    translation: "One cry that astounds the world",
-    meaning: "To rise to fame with a single brilliant act; to make a stunning debut after a long period of quiet preparation.",
+    translation: "Один крик потрясает мир",
+    meaning: "Прославиться одним блестящим поступком; произвести фурор после долгого молчания. «Выстрелить».",
     examples: [
-      { sentence: "他沉寂多年，这次终于一鸣惊人。", translation: "He was quiet for many years and finally made a stunning debut." }
+      { sentence: "他沉寂多年，这次终于一鸣惊人。", translation: "Он молчал многие годы и наконец произвёл фурор." }
     ],
     difficulty: "medium",
-    tags: ["fame", "talent", "surprise"]
+    tags: ["слава", "талант", "неожиданность"]
   },
   {
     id: 20,
     idiom: "金无足赤，人无完人",
     pinyin: "jīn wú zú chì, rén wú wán rén",
-    translation: "Gold is never pure, humans are never perfect",
-    meaning: "Nobody is perfect; everyone has their flaws. Used for tolerance and understanding.",
+    translation: "Нет чистого золота, нет совершенного человека",
+    meaning: "Никто не идеален; у каждого есть недостатки. Призыв к терпимости и пониманию.",
     examples: [
-      { sentence: "金无足赤，人无完人，要学会包容。", translation: "Gold is never pure, humans are never perfect — learn to be tolerant." }
+      { sentence: "金无足赤，人无完人，要学会包容。", translation: "Нет чистого золота, нет совершенного человека — учись терпеть и принимать." }
     ],
     difficulty: "medium",
-    tags: ["wisdom", "tolerance", "imperfection"]
+    tags: ["мудрость", "терпимость", "несовершенство"]
   }
 ];

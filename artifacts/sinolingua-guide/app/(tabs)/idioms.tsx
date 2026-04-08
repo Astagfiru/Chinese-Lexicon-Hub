@@ -12,13 +12,18 @@ import { SearchBar } from "@/components/SearchBar";
 import { IdiomCard } from "@/components/IdiomCard";
 import { idioms } from "@/data/idioms";
 
-const FILTER_OPTIONS = ["All", "Easy", "Medium", "Hard"] as const;
+const FILTER_OPTIONS = [
+  { key: "All", label: "Все" },
+  { key: "easy", label: "Лёгкие" },
+  { key: "medium", label: "Средние" },
+  { key: "hard", label: "Сложные" },
+] as const;
 
 export default function IdiomsScreen() {
   const colors = useColors();
   const insets = useSafeAreaInsets();
   const [query, setQuery] = useState("");
-  const [filter, setFilter] = useState<(typeof FILTER_OPTIONS)[number]>("All");
+  const [filter, setFilter] = useState<"All" | "easy" | "medium" | "hard">("All");
 
   const filtered = useMemo(() => {
     return idioms.filter((idiom) => {
@@ -30,8 +35,7 @@ export default function IdiomsScreen() {
         idiom.meaning.toLowerCase().includes(query.toLowerCase()) ||
         idiom.tags.some((t) => t.toLowerCase().includes(query.toLowerCase()));
       const matchesFilter =
-        filter === "All" ||
-        idiom.difficulty === filter.toLowerCase();
+        filter === "All" || idiom.difficulty === filter;
       return matchesQuery && matchesFilter;
     });
   }, [query, filter]);
@@ -52,29 +56,29 @@ export default function IdiomsScreen() {
         ]}
       >
         <Text style={[styles.title, { color: colors.foreground }]}>
-          成语 Chengyu
+          成语 Чэнъюи
         </Text>
         <Text style={[styles.subtitle, { color: colors.mutedForeground }]}>
-          Classical Chinese idioms
+          Классические китайские идиомы
         </Text>
         <View style={styles.searchRow}>
           <SearchBar
             value={query}
             onChangeText={setQuery}
-            placeholder="Search by character, pinyin, or meaning..."
+            placeholder="Поиск по иероглифам, пиньиню, значению..."
           />
         </View>
         <View style={styles.filters}>
           {FILTER_OPTIONS.map((opt) => (
             <View
-              key={opt}
+              key={opt.key}
               style={[
                 styles.filterBtn,
                 {
                   backgroundColor:
-                    filter === opt ? colors.primary : colors.secondary,
+                    filter === opt.key ? colors.primary : colors.secondary,
                   borderColor:
-                    filter === opt ? colors.primary : colors.border,
+                    filter === opt.key ? colors.primary : colors.border,
                 },
               ]}
             >
@@ -83,14 +87,14 @@ export default function IdiomsScreen() {
                   styles.filterText,
                   {
                     color:
-                      filter === opt
+                      filter === opt.key
                         ? colors.primaryForeground
                         : colors.mutedForeground,
                   },
                 ]}
-                onPress={() => setFilter(opt)}
+                onPress={() => setFilter(opt.key)}
               >
-                {opt}
+                {opt.label}
               </Text>
             </View>
           ))}
@@ -110,7 +114,7 @@ export default function IdiomsScreen() {
         ListEmptyComponent={() => (
           <View style={styles.empty}>
             <Text style={[styles.emptyText, { color: colors.mutedForeground }]}>
-              No idioms found for "{query}"
+              Ничего не найдено по запросу «{query}»
             </Text>
           </View>
         )}

@@ -14,9 +14,9 @@ const typeConfig: Record<
   SlangEntry["type"],
   { label: string; color: string }
 > = {
-  slang: { label: "Slang", color: "#9C27B0" },
-  abbreviation: { label: "Abbrev.", color: "#2196F3" },
-  internet: { label: "Internet", color: "#009688" },
+  slang: { label: "Сленг", color: "#9C27B0" },
+  abbreviation: { label: "Сокращ.", color: "#2196F3" },
+  internet: { label: "Интернет", color: "#009688" },
 };
 
 export function SlangCard({ entry }: { entry: SlangEntry }) {
@@ -97,7 +97,7 @@ export function SlangCard({ entry }: { entry: SlangEntry }) {
           </View>
           {entry.origin && (
             <Text style={[styles.origin, { color: colors.mutedForeground }]}>
-              Origin: {entry.origin}
+              Происхождение: {entry.origin}
             </Text>
           )}
         </View>

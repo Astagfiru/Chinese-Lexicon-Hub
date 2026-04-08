@@ -9,13 +9,13 @@ const categoryConfig: Record<
   CultureEntry["category"],
   { icon: string; color: string; label: string }
 > = {
-  etiquette: { icon: "award", color: "#E91E63", label: "Etiquette" },
-  festivals: { icon: "gift", color: "#FF5722", label: "Festivals" },
-  food: { icon: "coffee", color: "#795548", label: "Food" },
-  business: { icon: "briefcase", color: "#607D8B", label: "Business" },
-  social: { icon: "users", color: "#3F51B5", label: "Social" },
-  symbols: { icon: "star", color: "#D4A017", label: "Symbols" },
-  history: { icon: "book", color: "#4CAF50", label: "History" },
+  etiquette: { icon: "award", color: "#E91E63", label: "Этикет" },
+  festivals: { icon: "gift", color: "#FF5722", label: "Праздники" },
+  food: { icon: "coffee", color: "#795548", label: "Еда" },
+  business: { icon: "briefcase", color: "#607D8B", label: "Бизнес" },
+  social: { icon: "users", color: "#3F51B5", label: "Социум" },
+  symbols: { icon: "star", color: "#D4A017", label: "Символы" },
+  history: { icon: "book", color: "#4CAF50", label: "История" },
 };
 
 export function CultureCard({ entry }: { entry: CultureEntry }) {
@@ -71,7 +71,7 @@ export function CultureCard({ entry }: { entry: CultureEntry }) {
           </Text>
 
           <Text style={[styles.sectionLabel, { color: colors.mutedForeground }]}>
-            KEY POINTS
+            КЛЮЧЕВЫЕ МОМЕНТЫ
           </Text>
           {entry.keyPoints.map((point, i) => (
             <View key={i} style={styles.keyPoint}>
@@ -98,7 +98,7 @@ export function CultureCard({ entry }: { entry: CultureEntry }) {
             <Text
               style={[styles.exampleLabel, { color: colors.mutedForeground }]}
             >
-              Example
+              Пример
             </Text>
             <Text style={[styles.example, { color: colors.foreground }]}>
               {entry.example}
@@ -109,7 +109,7 @@ export function CultureCard({ entry }: { entry: CultureEntry }) {
             <View style={styles.dosDonts}>
               <View style={styles.dosColumn}>
                 <Text style={[styles.dosLabel, { color: "#4CAF50" }]}>
-                  DO
+                  СТОИТ
                 </Text>
                 {entry.doAndDont.do.map((item, i) => (
                   <View key={i} style={styles.dosItem}>
@@ -124,7 +124,7 @@ export function CultureCard({ entry }: { entry: CultureEntry }) {
               </View>
               <View style={styles.dontsColumn}>
                 <Text style={[styles.dosLabel, { color: "#F44336" }]}>
-                  DON'T
+                  НЕ СТОИТ
                 </Text>
                 {entry.doAndDont.dont.map((item, i) => (
                   <View key={i} style={styles.dosItem}>

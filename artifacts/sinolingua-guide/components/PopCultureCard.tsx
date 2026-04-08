@@ -9,13 +9,13 @@ const sourceTypeConfig: Record<
   PopCulturePhrase["sourceType"],
   { icon: string; color: string; label: string }
 > = {
-  drama: { icon: "tv", color: "#E91E63", label: "Drama" },
-  movie: { icon: "film", color: "#673AB7", label: "Movie" },
-  anime: { icon: "star", color: "#FF5722", label: "Anime" },
-  song: { icon: "music", color: "#3F51B5", label: "Song" },
-  meme: { icon: "zap", color: "#FF9800", label: "Meme" },
-  game: { icon: "play", color: "#4CAF50", label: "Game" },
-  variety: { icon: "video", color: "#00BCD4", label: "Variety" },
+  drama: { icon: "tv", color: "#E91E63", label: "Дорама" },
+  movie: { icon: "film", color: "#673AB7", label: "Кино" },
+  anime: { icon: "star", color: "#FF5722", label: "Аниме" },
+  song: { icon: "music", color: "#3F51B5", label: "Песня" },
+  meme: { icon: "zap", color: "#FF9800", label: "Мем" },
+  game: { icon: "play", color: "#4CAF50", label: "Игра" },
+  variety: { icon: "video", color: "#00BCD4", label: "Шоу" },
 };
 
 export function PopCultureCard({ phrase }: { phrase: PopCulturePhrase }) {
@@ -75,7 +75,7 @@ export function PopCultureCard({ phrase }: { phrase: PopCulturePhrase }) {
             {phrase.meaning}
           </Text>
           <Text style={[styles.sectionLabel, { color: colors.mutedForeground }]}>
-            CONTEXT
+            КОНТЕКСТ
           </Text>
           <Text style={[styles.context, { color: colors.foreground }]}>
             {phrase.context}
@@ -90,7 +90,7 @@ export function PopCultureCard({ phrase }: { phrase: PopCulturePhrase }) {
             ]}
           >
             <Text style={[styles.usageLabel, { color: colors.mutedForeground }]}>
-              How to use
+              Как использовать
             </Text>
             <Text style={[styles.usage, { color: colors.foreground }]}>
               {phrase.usage}

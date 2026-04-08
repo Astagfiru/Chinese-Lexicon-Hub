@@ -18,9 +18,9 @@ import { cultureEntries } from "@/data/culture";
 const sections = [
   {
     key: "idioms",
-    title: "Chengyu",
+    title: "Чэнъюи",
     titleChinese: "成语",
-    subtitle: "Classical four-character idioms",
+    subtitle: "Классические четырёхсловные идиомы",
     icon: "book-open" as const,
     color: "#C0392B",
     count: idioms.length,
@@ -28,9 +28,9 @@ const sections = [
   },
   {
     key: "slang",
-    title: "Slang & Abbrev.",
+    title: "Сленг",
     titleChinese: "网络用语",
-    subtitle: "Internet slang & abbreviations",
+    subtitle: "Интернет-сленг и сокращения",
     icon: "zap" as const,
     color: "#9C27B0",
     count: slangEntries.length,
@@ -38,9 +38,9 @@ const sections = [
   },
   {
     key: "popculture",
-    title: "Pop Culture",
+    title: "Поп-культура",
     titleChinese: "流行文化",
-    subtitle: "Phrases from media & memes",
+    subtitle: "Вирусные фразы из медиа и мемов",
     icon: "film" as const,
     color: "#E91E63",
     count: 16,
@@ -48,9 +48,9 @@ const sections = [
   },
   {
     key: "pronunciation",
-    title: "Pronunciation",
+    title: "Произношение",
     titleChinese: "发音",
-    subtitle: "Tones & tricky sounds",
+    subtitle: "Тоны и сложные звуки",
     icon: "mic" as const,
     color: "#009688",
     count: 10,
@@ -58,9 +58,9 @@ const sections = [
   },
   {
     key: "dialogues",
-    title: "Dialogues",
+    title: "Диалоги",
     titleChinese: "对话练习",
-    subtitle: "Interactive conversation scenarios",
+    subtitle: "Интерактивные разговорные сценарии",
     icon: "message-circle" as const,
     color: "#2196F3",
     count: 5,
@@ -68,9 +68,9 @@ const sections = [
   },
   {
     key: "culture",
-    title: "Culture Guide",
+    title: "Культура",
     titleChinese: "文化指南",
-    subtitle: "Customs, etiquette & society",
+    subtitle: "Традиции, этикет и общество",
     icon: "globe" as const,
     color: "#D4A017",
     count: cultureEntries.length,
@@ -95,7 +95,7 @@ export default function HomeScreen() {
       }}
       showsVerticalScrollIndicator={false}
     >
-      {/* Header */}
+      {/* Шапка */}
       <View style={styles.hero}>
         <Text style={[styles.heroTitle, { color: colors.primary }]}>
           汉语
@@ -104,34 +104,34 @@ export default function HomeScreen() {
           Sinolingua Guide
         </Text>
         <Text style={[styles.heroDesc, { color: colors.mutedForeground }]}>
-          Your companion for Chinese language and culture
+          Твой помощник в изучении китайского языка и культуры
         </Text>
       </View>
 
-      {/* Quick stats */}
+      {/* Быстрая статистика */}
       <View style={[styles.statsRow, { backgroundColor: colors.card, borderColor: colors.border }]}>
         <View style={styles.stat}>
           <Text style={[styles.statNum, { color: colors.primary }]}>20+</Text>
-          <Text style={[styles.statLabel, { color: colors.mutedForeground }]}>Chengyu</Text>
+          <Text style={[styles.statLabel, { color: colors.mutedForeground }]}>Чэнъюев</Text>
         </View>
         <View style={[styles.statDivider, { backgroundColor: colors.border }]} />
         <View style={styles.stat}>
           <Text style={[styles.statNum, { color: colors.primary }]}>20+</Text>
-          <Text style={[styles.statLabel, { color: colors.mutedForeground }]}>Slang</Text>
+          <Text style={[styles.statLabel, { color: colors.mutedForeground }]}>Сленга</Text>
         </View>
         <View style={[styles.statDivider, { backgroundColor: colors.border }]} />
         <View style={styles.stat}>
           <Text style={[styles.statNum, { color: colors.primary }]}>5</Text>
-          <Text style={[styles.statLabel, { color: colors.mutedForeground }]}>Scenarios</Text>
+          <Text style={[styles.statLabel, { color: colors.mutedForeground }]}>Сценариев</Text>
         </View>
       </View>
 
-      {/* Section title */}
+      {/* Заголовок секции */}
       <Text style={[styles.sectionTitle, { color: colors.foreground }]}>
-        Explore Sections
+        Разделы
       </Text>
 
-      {/* Grid of sections */}
+      {/* Сетка разделов */}
       <View style={styles.grid}>
         {sections.map((section) => (
           <TouchableOpacity
@@ -174,7 +174,7 @@ export default function HomeScreen() {
                   { color: colors.mutedForeground },
                 ]}
               >
-                {section.count} entries
+                {section.count} записей
               </Text>
               <Feather
                 name="arrow-right"

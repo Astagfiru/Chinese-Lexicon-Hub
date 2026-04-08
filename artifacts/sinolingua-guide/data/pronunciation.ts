@@ -36,58 +36,58 @@ export interface TonePair {
 export const toneRules: ToneRule[] = [
   {
     tone: 1,
-    name: "First Tone (阴平)",
-    description: "High and level. Start high and stay there — like a sustained musical note.",
+    name: "1-й тон (阴平)",
+    description: "Высокий и ровный. Начинай высоко и держи высоту — как затяжная музыкальная нота.",
     symbol: "ā",
-    pitch: "55 (High Level)",
+    pitch: "55 (высокий ровный)",
     example: "妈",
     examplePinyin: "mā",
-    exampleMeaning: "mother",
-    mnemonic: "Flat line on a heart monitor — steady and high"
+    exampleMeaning: "мама",
+    mnemonic: "Прямая линия на кардиограмме — ровно и высоко"
   },
   {
     tone: 2,
-    name: "Second Tone (阳平)",
-    description: "Rising tone. Like asking a question in English — goes from mid to high.",
+    name: "2-й тон (阳平)",
+    description: "Восходящий тон. Как в русском вопросе — голос идёт от среднего вверх.",
     symbol: "á",
-    pitch: "35 (Rising)",
+    pitch: "35 (восходящий)",
     example: "麻",
     examplePinyin: "má",
-    exampleMeaning: "hemp / numb",
-    mnemonic: "Arrow pointing up — your voice rises like a question"
+    exampleMeaning: "конопля / онемение",
+    mnemonic: "Стрелка вверх — голос поднимается, как при вопросе"
   },
   {
     tone: 3,
-    name: "Third Tone (上声)",
-    description: "Dipping tone. Falls low then comes back up. In normal speech, often just falls (half third tone).",
+    name: "3-й тон (上声)",
+    description: "Ныряющий тон. Сначала падает вниз, затем поднимается. В быстрой речи часто просто падает (половина 3-го тона).",
     symbol: "ǎ",
-    pitch: "214 (Dipping)",
+    pitch: "214 (ныряющий)",
     example: "马",
     examplePinyin: "mǎ",
-    exampleMeaning: "horse",
-    mnemonic: "A valley — dip down then rise back up"
+    exampleMeaning: "лошадь",
+    mnemonic: "Долина — ныряй вниз и поднимайся обратно"
   },
   {
     tone: 4,
-    name: "Fourth Tone (去声)",
-    description: "Falling tone. Sharp drop from high to low. Like an abrupt command or 'stop!'",
+    name: "4-й тон (去声)",
+    description: "Падающий тон. Резкое падение с высокого вниз. Как командный «Стоп!».",
     symbol: "à",
-    pitch: "51 (Falling)",
+    pitch: "51 (падающий)",
     example: "骂",
     examplePinyin: "mà",
-    exampleMeaning: "scold",
-    mnemonic: "Arrow pointing down sharply — a sudden drop"
+    exampleMeaning: "ругать",
+    mnemonic: "Стрелка резко вниз — как удар кулаком по столу"
   },
   {
     tone: 0,
-    name: "Neutral Tone (轻声)",
-    description: "Light and short, with no particular pitch contour. Often appears in particles and certain words.",
+    name: "Нейтральный тон (轻声)",
+    description: "Лёгкий и короткий, без определённого контура. Часто появляется в частицах и некоторых словах.",
     symbol: "a",
-    pitch: "Neutral",
+    pitch: "Нейтральный",
     example: "吗",
     examplePinyin: "ma",
-    exampleMeaning: "question particle",
-    mnemonic: "A feather — light, quick, effortless"
+    exampleMeaning: "вопросительная частица",
+    mnemonic: "Пёрышко — лёгко, быстро, без усилий"
   }
 ];
 
@@ -96,43 +96,43 @@ export const tonePairs: TonePair[] = [
     id: 1,
     word: "mā/má/mǎ/mà",
     pairs: [
-      { pinyin: "mā", tone: 1, meaning: "妈 — mother" },
-      { pinyin: "má", tone: 2, meaning: "麻 — hemp / numb" },
-      { pinyin: "mǎ", tone: 3, meaning: "马 — horse" },
-      { pinyin: "mà", tone: 4, meaning: "骂 — scold" }
+      { pinyin: "mā", tone: 1, meaning: "妈 — мама" },
+      { pinyin: "má", tone: 2, meaning: "麻 — конопля / онемение" },
+      { pinyin: "mǎ", tone: 3, meaning: "马 — лошадь" },
+      { pinyin: "mà", tone: 4, meaning: "骂 — ругать" }
     ],
-    note: "The classic 4-tone example! One syllable 'ma' with four totally different meanings depending on tone."
+    note: "Классический пример 4 тонов! Один слог «ma» с четырьмя совершенно разными значениями — только тон меняет смысл."
   },
   {
     id: 2,
     word: "bāo/báo/bǎo/bào",
     pairs: [
-      { pinyin: "bāo", tone: 1, meaning: "包 — bag / wrap" },
-      { pinyin: "báo", tone: 2, meaning: "薄 — thin" },
-      { pinyin: "bǎo", tone: 3, meaning: "保 — protect / treasure" },
-      { pinyin: "bào", tone: 4, meaning: "报 — report / newspaper" }
+      { pinyin: "bāo", tone: 1, meaning: "包 — сумка / заворачивать" },
+      { pinyin: "báo", tone: 2, meaning: "薄 — тонкий" },
+      { pinyin: "bǎo", tone: 3, meaning: "保 — защищать / беречь" },
+      { pinyin: "bào", tone: 4, meaning: "报 — сообщение / газета" }
     ],
-    note: "Very different meanings — confusing bǎo (protect) with bào (report) is a common error!"
+    note: "Очень разные значения — путать bǎo (защищать) с bào (сообщение) — распространённая ошибка!"
   },
   {
     id: 3,
     word: "shī/shí/shǐ/shì",
     pairs: [
-      { pinyin: "shī", tone: 1, meaning: "诗 — poetry / teacher (老师)" },
-      { pinyin: "shí", tone: 2, meaning: "时 — time / ten (十)" },
-      { pinyin: "shǐ", tone: 3, meaning: "史 — history" },
-      { pinyin: "shì", tone: 4, meaning: "事 — matter / affair" }
+      { pinyin: "shī", tone: 1, meaning: "诗 — поэзия / учитель (老师)" },
+      { pinyin: "shí", tone: 2, meaning: "时 — время / десять (十)" },
+      { pinyin: "shǐ", tone: 3, meaning: "史 — история" },
+      { pinyin: "shì", tone: 4, meaning: "事 — дело / событие" }
     ],
-    note: "The sh- initial is tricky for many learners. The retroflex 'sh' sound must be mastered first."
+    note: "Начальный звук sh- труден для многих студентов. Сначала освой ретрофлексный sh-, потом работай над тонами."
   },
   {
     id: 4,
     word: "wèn/wén",
     pairs: [
-      { pinyin: "wén", tone: 2, meaning: "文 — culture / literature / text" },
-      { pinyin: "wèn", tone: 4, meaning: "问 — ask / question" }
+      { pinyin: "wén", tone: 2, meaning: "文 — культура / литература / текст" },
+      { pinyin: "wèn", tone: 4, meaning: "问 — спрашивать / вопрос" }
     ],
-    note: "Very common pair. 问题 (wèntí) means 'problem/question', not 文题."
+    note: "Очень распространённая пара. 问题 (wèntí) — «проблема/вопрос», а не 文题."
   }
 ];
 
@@ -142,9 +142,9 @@ export const trickyPronunciations: PronunciationItem[] = [
     character: "是",
     pinyin: "shì",
     tone: 4,
-    meaning: "to be / is / are",
-    audioDescription: "Start high and fall sharply: 'shrrr-SHRRR' dropping",
-    tip: "The 'sh' is retroflex — curl your tongue tip back toward the roof of your mouth. Do NOT use the English 'sh' from 'she'.",
+    meaning: "быть / является",
+    audioDescription: "Начни высоко и резко упади вниз",
+    tip: "Звук «sh» ретрофлексный — загни кончик языка назад к нёбу. НЕ используй английский «sh» из слова «she». Это совсем другой звук!",
     category: "tricky"
   },
   {
@@ -152,9 +152,9 @@ export const trickyPronunciations: PronunciationItem[] = [
     character: "这",
     pinyin: "zhè",
     tone: 4,
-    meaning: "this",
-    audioDescription: "Retroflex 'zh', similar to 'j' but with tongue curled back",
-    tip: "zh-, ch-, sh-, r- are all retroflex consonants. Your tongue tip curls back — this is the most common pronunciation challenge for English speakers.",
+    meaning: "этот",
+    audioDescription: "Ретрофлексный «zh», похожий на «дж» с загнутым языком",
+    tip: "zh-, ch-, sh-, r- — все ретрофлексные согласные. Кончик языка загибается назад. Это самая распространённая трудность для русскоязычных студентов.",
     category: "initial"
   },
   {
@@ -162,10 +162,10 @@ export const trickyPronunciations: PronunciationItem[] = [
     character: "女",
     pinyin: "nǚ",
     tone: 3,
-    meaning: "woman / female",
-    audioDescription: "The ü sound: round your lips as if saying 'oo' but say 'ee'",
-    tip: "The ü vowel doesn't exist in English! Round your lips into a tight 'O' shape, then say 'ee'. This applies to lü, nü, and after j, q, x (written as just 'u' there).",
-    similar: [{ character: "鱼", pinyin: "yú", meaning: "fish" }],
+    meaning: "женщина / женский",
+    audioDescription: "Звук ü: округли губы как для «у», но произноси «и»",
+    tip: "Звук ü отсутствует в русском! Вытяни губы в трубочку как для «у», затем произноси «и». Этот звук встречается в lü, nü и после j, q, x (там пишется просто «u»).",
+    similar: [{ character: "鱼", pinyin: "yú", meaning: "рыба" }],
     category: "final"
   },
   {
@@ -173,9 +173,9 @@ export const trickyPronunciations: PronunciationItem[] = [
     character: "人",
     pinyin: "rén",
     tone: 2,
-    meaning: "person / people",
-    audioDescription: "The 'r' in Mandarin is unlike English — softer, buzzing",
-    tip: "Mandarin 'r' is made with the tongue in the retroflex position, creating a buzzing sound similar to the French 'j' in 'je'. NOT like English 'r'.",
+    meaning: "человек / люди",
+    audioDescription: "Мандаринский «r» непохож на русский — мягче, с жужжанием",
+    tip: "Мандаринский «r» — ретрофлексный, создаёт жужжащий звук похожий на французское «j» в слове «je». НЕ как русский «р». Представь мягкое жужжание.",
     category: "initial"
   },
   {
@@ -183,9 +183,9 @@ export const trickyPronunciations: PronunciationItem[] = [
     character: "学",
     pinyin: "xué",
     tone: 2,
-    meaning: "study / learn",
-    audioDescription: "x- is lighter than English 'sh', more like 'sy'",
-    tip: "x-, j-, q- are palatal consonants. x sounds like a 'sh' made further forward in the mouth, almost 'sy'. j is like 'jy', q is like 'chy'.",
+    meaning: "учиться / изучать",
+    audioDescription: "x- мягче, чем «ш» — почти как «сь»",
+    tip: "Звуки x-, j-, q- — палатальные согласные. x похож на «ш», произносимый дальше вперёд, почти как «сь». j — как «дзь», q — как «ць».",
     category: "initial"
   },
   {
@@ -193,9 +193,9 @@ export const trickyPronunciations: PronunciationItem[] = [
     character: "和",
     pinyin: "hé",
     tone: 2,
-    meaning: "and / harmony / peace",
-    audioDescription: "h- is a light breathy sound, not English 'h'",
-    tip: "Chinese 'h' is slightly fricative, like a gentle 'kh'. It's breathier than English 'h'. The -e final is a back vowel, not like English 'e' in 'bed'.",
+    meaning: "и / гармония / мир",
+    audioDescription: "h- лёгкий и придыхательный",
+    tip: "Китайский «h» немного фрикативный — как лёгкое «кх». Гласный «e» здесь задний: не как в слове «эй», а глубже. В «he» — почти как «хэ» с задним «э».",
     category: "initial"
   },
   {
@@ -203,9 +203,9 @@ export const trickyPronunciations: PronunciationItem[] = [
     character: "二",
     pinyin: "èr",
     tone: 4,
-    meaning: "two",
-    audioDescription: "The -er final: curl tongue back while saying 'uh'",
-    tip: "The -er/r ending is an 'r-colored vowel'. Say 'uh' and then curl your tongue back. Common in 儿 (ér), 而 (ér). Also used in 'erhua' to make words sound more colloquial.",
+    meaning: "два",
+    audioDescription: "Финаль -er: загни язык назад, произнося «э»",
+    tip: "Финаль -er/r — это «r-окрашенная гласная». Говори «э» и загни язык назад. Встречается в 儿 (ér), 而 (ér). Также используется в «эрхуа» — придаёт словам разговорный оттенок.",
     category: "final"
   },
   {
@@ -213,9 +213,9 @@ export const trickyPronunciations: PronunciationItem[] = [
     character: "不",
     pinyin: "bù",
     tone: 4,
-    meaning: "not / no",
-    audioDescription: "Tone changes! 不 changes from 4th tone to 2nd tone before another 4th tone word",
-    tip: "Tone sandhi: 不 is normally 4th tone, but becomes 2nd tone (bú) before another 4th tone. Example: 不对 = bú duì (not correct). This is automatic in native speech.",
+    meaning: "не / нет",
+    audioDescription: "Тон меняется! 不 меняется с 4-го на 2-й перед другим 4-м тоном",
+    tip: "Тональный сандхи: 不 обычно 4-й тон, но становится 2-м (bú) перед другим 4-м тоном. Например: 不对 = bú duì (неправильно). В быстрой речи это происходит автоматически.",
     category: "tone"
   },
   {
@@ -223,9 +223,9 @@ export const trickyPronunciations: PronunciationItem[] = [
     character: "一",
     pinyin: "yī",
     tone: 1,
-    meaning: "one",
-    audioDescription: "One is a tone change master — changes based on what follows",
-    tip: "一 changes tone depending on context: before 4th tone → 2nd tone (一个 yí gè); before 1st/2nd/3rd tone → 4th tone (一天 yì tiān); standalone → 1st tone. Practice this rule!",
+    meaning: "один",
+    audioDescription: "«Один» — мастер тональных изменений",
+    tip: "Тон 一 меняется по контексту: перед 4-м тоном → 2-й (一个 yí gè); перед 1/2/3-м тоном → 4-й (一天 yì tiān); отдельно стоящий → 1-й. Это правило нужно выучить!",
     category: "tone"
   },
   {
@@ -233,9 +233,9 @@ export const trickyPronunciations: PronunciationItem[] = [
     character: "哦",
     pinyin: "ó / ò",
     tone: 2,
-    meaning: "oh! / I see (particle)",
-    audioDescription: "Different tones change meaning dramatically for particles",
-    tip: "Sentence-final particles like 啊, 哦, 呢, 吧, 嘛 carry tone and change the feeling of sentences. 哦 (ó) = surprised realization, 哦 (ò) = sudden understanding. Pay attention to these!",
+    meaning: "о! / понял (частица)",
+    audioDescription: "Разные тоны кардинально меняют смысл частиц",
+    tip: "Финальные частицы 啊, 哦, 呢, 吧, 嘛 несут тон и меняют оттенок предложения. 哦 (ó) = удивлённое открытие, 哦 (ò) = внезапное понимание. Обращай внимание!",
     category: "tone"
   }
 ];

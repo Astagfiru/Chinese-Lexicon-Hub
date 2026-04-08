@@ -16,14 +16,14 @@ const CATEGORIES: Array<{
   key: CultureEntry["category"] | "all";
   label: string;
 }> = [
-  { key: "all", label: "All" },
-  { key: "social", label: "Social" },
-  { key: "etiquette", label: "Etiquette" },
-  { key: "food", label: "Food" },
-  { key: "festivals", label: "Festivals" },
-  { key: "business", label: "Business" },
-  { key: "symbols", label: "Symbols" },
-  { key: "history", label: "History" },
+  { key: "all", label: "Все" },
+  { key: "social", label: "Социум" },
+  { key: "etiquette", label: "Этикет" },
+  { key: "food", label: "Еда" },
+  { key: "festivals", label: "Праздники" },
+  { key: "business", label: "Бизнес" },
+  { key: "symbols", label: "Символы" },
+  { key: "history", label: "История" },
 ];
 
 export default function CultureScreen() {
@@ -63,16 +63,16 @@ export default function CultureScreen() {
         ]}
       >
         <Text style={[styles.title, { color: colors.foreground }]}>
-          文化指南 Culture
+          文化指南 Культура
         </Text>
         <Text style={[styles.subtitle, { color: colors.mutedForeground }]}>
-          Customs, etiquette & Chinese society
+          Традиции, этикет и китайское общество
         </Text>
         <View style={styles.searchRow}>
           <SearchBar
             value={query}
             onChangeText={setQuery}
-            placeholder="Search culture topics..."
+            placeholder="Поиск по темам культуры..."
           />
         </View>
         <FlatList
@@ -126,7 +126,7 @@ export default function CultureScreen() {
             <Text
               style={[styles.emptyText, { color: colors.mutedForeground }]}
             >
-              No entries found for "{query}"
+              Ничего не найдено по запросу «{query}»
             </Text>
           </View>
         )}
