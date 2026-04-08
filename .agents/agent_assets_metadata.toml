@@ -1,0 +1,8 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "opnv3vwUTpOG5bswH8X-_"
+uri = "file://artifacts/sinolingua-guide/assets/images/icon.png"
+type = "image"
+title = "sinolingua app icon"

@@ -1,0 +1,186 @@
+Окей, даю тебе **готовое описание приложения + описание БД + реальные источники**, чтобы можно было почти без правок вставить в отчёт 👇
+
+---
+
+# 📱 Описание приложения
+
+**Sinolingua Guide** — это обучающее приложение для студентов китайского языка, направленное на развитие лексических, культурных и коммуникативных навыков.
+
+Приложение объединяет несколько функциональных модулей:
+
+* 📚 **Сборник чэнъюев (成语)** — поиск идиом с переводом, значением и примерами
+* 🔤 **Словарь сленга и сокращений** — объяснение современных интернет-выражений
+* 🎬 **Раздел поп-культуры** — популярные фразы из медиа и их интерпретация
+* 🎤 **Тренажёр произношения** — аудио-примеры и повторение
+* 🧩 **Сценарии общения** — интерактивные диалоги с выбором ответа
+* 📖 **Культурный справочник** — особенности общения и этикета
+
+Приложение не использует искусственный интеллект, а функционирует на основе заранее подготовленных данных, хранящихся в базе данных, сформированной из открытых лингвистических ресурсов.
+
+---
+
+# 🗄️ Описание базы данных
+
+База данных приложения формируется автоматически путём импорта открытых датасетов китайского языка.
+
+## 1. Таблица «Idioms» (чэнъюи)
+
+Содержит китайские идиомы и их значения.
+
+**Атрибуты:**
+
+```text
+<<PK>> idiom_id: int
+idiom: varchar
+pinyin: varchar
+translation: text
+meaning: text
+```
+
+**Источник данных:**
+
+* ChID Dataset — корпус китайских идиом
+  👉 [https://hyper.ai/en/datasets/32945/](https://hyper.ai/en/datasets/32945/)
+
+* PETCI (Chinese Idioms Translation Dataset)
+  👉 [https://github.com/kenantang/petci](https://github.com/kenantang/petci)
+
+---
+
+## 2. Таблица «Examples» (примеры использования)
+
+Содержит примеры предложений с идиомами.
+
+**Атрибуты:**
+
+```text
+<<PK>> example_id: int
+<<FK>> idiom_id: int
+sentence: text
+translation: text
+```
+
+**Источник данных:**
+
+* ChID Dataset
+  👉 [https://hyper.ai/en/datasets/32945/](https://hyper.ai/en/datasets/32945/)
+
+---
+
+## 3. Таблица «Slang» (сленг и сокращения)
+
+Содержит современные интернет-выражения.
+
+**Атрибуты:**
+
+```text
+<<PK>> slang_id: int
+word: varchar
+meaning: text
+example: text
+```
+
+**Источник данных:**
+
+* Chinese Internet Language Corpus (CCI)
+  👉 [https://www.zonekee.com/ots-dataset/](https://www.zonekee.com/ots-dataset/)
+
+---
+
+## 4. Таблица «Words» (общая лексика)
+
+Используется как словарь слов и выражений.
+
+**Атрибуты:**
+
+```text
+<<PK>> word_id: int
+word: varchar
+pinyin: varchar
+frequency: int
+```
+
+**Источник данных:**
+
+* Tencent Chinese Word Vectors Dataset
+  👉 [https://ai.tencent.com/ailab/nlp/en/embedding.html](https://ai.tencent.com/ailab/nlp/en/embedding.html)
+
+(описание: [https://medium.com/syncedreview/tencent-ai-lab-open-sources-8m-word-chinese-nlp-vector-dataset-564764b1abc8](https://medium.com/syncedreview/tencent-ai-lab-open-sources-8m-word-chinese-nlp-vector-dataset-564764b1abc8))
+
+---
+
+## 5. Таблица «Culture» (культурные особенности)
+
+Содержит правила общения и культурные заметки.
+
+**Атрибуты:**
+
+```text
+<<PK>> culture_id: int
+title: varchar
+description: text
+example: text
+```
+
+**Источник данных:**
+
+* LIVAC Synchronous Corpus (для примеров контекста)
+  👉 [https://en.wikipedia.org/wiki/LIVAC_Synchronous_Corpus](https://en.wikipedia.org/wiki/LIVAC_Synchronous_Corpus)
+
+---
+
+## 6. Таблица «Dialogues» (сценарии общения)
+
+Хранит учебные диалоги.
+
+**Атрибуты:**
+
+```text
+<<PK>> dialogue_id: int
+title: varchar
+situation: text
+```
+
+---
+
+## 7. Таблица «DialogueOptions» (варианты ответов)
+
+Позволяет реализовать ветвящиеся сценарии.
+
+**Атрибуты:**
+
+```text
+<<PK>> option_id: int
+<<FK>> dialogue_id: int
+question: text
+answer: text
+result: text
+is_correct: boolean
+```
+
+---
+
+# 🔗 Как это описать одной фразой (для защиты)
+
+👉
+«База данных приложения формируется на основе открытых лингвистических корпусов китайского языка (ChID, PETCI, Tencent NLP Dataset, LIVAC и др.), что позволяет автоматически наполнять систему актуальными данными без ручного ввода.»
+
+---
+
+# 🚀 Плюс для оценки
+
+Ты можешь добавить:
+
+* данные **масштабируемы**
+* можно обновлять БД через импорт
+* используются **реальные корпуса, применяемые в NLP**
+
+---
+
+Если хочешь, дальше могу:
+
+* 📊 сделать тебе **ER-диаграмму (как на курсовую)**
+* 🧱 оформить это в **PlantUML**
+* 📄 написать весь раздел «Проектирование БД» под ГОСТ
+
+Скажи 👍
