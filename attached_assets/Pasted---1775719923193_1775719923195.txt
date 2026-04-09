@@ -1,0 +1,339 @@
+Окей, даю тебе **техническое, но понятное описание**: что это за базы, в каком формате они лежат и **как их реально загрузить в своё приложение** 👇
+
+---
+
+# 🧠 1. ChID Dataset (идиомы)
+
+## 📌 Что это
+
+Крупный датасет китайских идиом (成语), используемый в NLP-задачах.
+
+## 📂 Формат данных
+
+Обычно:
+
+* `.json` или `.jsonl` (каждая строка — отдельный JSON)
+
+Пример структуры:
+
+```json
+{
+  "content": "他总是对牛弹琴，让人无奈。",
+  "candidates": ["对牛弹琴", "画蛇添足"],
+  "answer": "对牛弹琴"
+}
+```
+
+## ⚙️ Как использовать
+
+👉 Извлекаешь:
+
+* `answer` → идиома
+* `content` → пример
+
+---
+
+## 🛠️ Как выгружать
+
+### Вариант (Python)
+
+```python
+import json
+
+idioms = []
+
+with open('chid.jsonl', 'r', encoding='utf-8') as f:
+    for line in f:
+        data = json.loads(line)
+        idioms.append({
+            "idiom": data["answer"],
+            "example": data["content"]
+        })
+```
+
+---
+
+## 🗄️ Как хранить в БД
+
+```text
+Idioms
+- idiom_id (PK)
+- idiom
+- example
+```
+
+---
+
+# 🔤 2. PETCI (переводы идиом)
+
+## 📌 Что это
+
+Датасет: идиома → перевод (английский)
+
+## 📂 Формат
+
+* `.csv` или `.json`
+
+Пример:
+
+```json
+{
+  "idiom": "对牛弹琴",
+  "translation": "to speak to the wrong audience"
+}
+```
+
+---
+
+## 🛠️ Загрузка
+
+```python
+import pandas as pd
+
+df = pd.read_csv('petci.csv')
+
+for _, row in df.iterrows():
+    idiom = row['idiom']
+    translation = row['translation']
+```
+
+---
+
+## 🔗 Связка с ChID
+
+👉 Ты объединяешь:
+
+```text
+Idioms
+- idiom
+- translation
+- example
+```
+
+(по полю `idiom`)
+
+---
+
+# 🔤 3. Tencent Word Dataset
+
+## 📌 Что это
+
+Огромный словарь слов + вектора
+
+## 📂 Формат
+
+* `.txt`
+
+Каждая строка:
+
+```text
+中国 0.123 0.532 0.876 ...
+```
+
+👉 слово + числа (вектор)
+
+---
+
+## ⚙️ Что брать
+
+Тебе НЕ нужны вектора, только:
+
+* слово
+
+---
+
+## 🛠️ Загрузка
+
+```python
+words = []
+
+with open('tencent.txt', 'r', encoding='utf-8') as f:
+    for line in f:
+        parts = line.split()
+        word = parts[0]
+        words.append(word)
+```
+
+---
+
+## 🗄️ Таблица
+
+```text
+Words
+- word_id
+- word
+```
+
+---
+
+# 🌐 4. CCI / Интернет-сленг
+
+## 📌 Что это
+
+Корпус интернет-языка (сленг, сокращения)
+
+## 📂 Формат
+
+* HTML / TXT / CSV (зависит от выгрузки)
+
+Пример:
+
+```text
+YYDS - 永远的神 - лучший навсегда
+996 - режим работы 9-9-6
+```
+
+---
+
+## 🛠️ Парсинг
+
+```python
+slang_list = []
+
+with open('slang.txt', 'r', encoding='utf-8') as f:
+    for line in f:
+        parts = line.split('-')
+        if len(parts) >= 2:
+            slang_list.append({
+                "word": parts[0].strip(),
+                "meaning": parts[1].strip()
+            })
+```
+
+---
+
+## 🗄️ Таблица
+
+```text
+Slang
+- slang_id
+- word
+- meaning
+```
+
+---
+
+# 🧠 5. LIVAC Corpus
+
+## 📌 Что это
+
+Корпус реальных текстов (новости, медиа)
+
+## 📂 Формат
+
+* текстовые файлы / XML
+
+---
+
+## ⚙️ Как использовать
+
+👉 НЕ всю базу, а:
+
+* вытащить примеры предложений
+
+---
+
+## 🛠️ Пример
+
+```python
+sentences = []
+
+with open('livac.txt', 'r', encoding='utf-8') as f:
+    for line in f:
+        if len(line) > 10:
+            sentences.append(line.strip())
+```
+
+---
+
+## 🗄️ Таблица
+
+```text
+Examples
+- example_id
+- sentence
+```
+
+---
+
+# 🔗 Как всё объединяется (ключевая часть)
+
+## 📊 Итоговая структура
+
+```text
+Idioms
+- idiom_id
+- idiom
+- translation
+
+Examples
+- example_id
+- idiom_id
+- sentence
+
+Words
+- word_id
+- word
+
+Slang
+- slang_id
+- word
+- meaning
+```
+
+---
+
+## 🔄 Логика объединения
+
+1. Загружаешь ChID → получаешь идиомы + примеры
+2. Загружаешь PETCI → добавляешь перевод
+3. Загружаешь Tencent → словарь
+4. Загружаешь CCI → сленг
+5. Загружаешь LIVAC → дополнительные примеры
+
+---
+
+# ⚙️ Как это загрузить в БД (реально)
+
+## Пример (SQLite)
+
+```python
+import sqlite3
+
+conn = sqlite3.connect('app.db')
+cursor = conn.cursor()
+
+cursor.execute('''
+CREATE TABLE Idioms (
+    id INTEGER PRIMARY KEY,
+    idiom TEXT,
+    translation TEXT
+)
+''')
+
+cursor.execute('''
+INSERT INTO Idioms (idiom, translation)
+VALUES (?, ?)
+''', ("对牛弹琴", "to speak to the wrong audience"))
+
+conn.commit()
+```
+
+---
+
+# 🚀 Как описать в отчёте (готовая формулировка)
+
+👉
+«Данные приложения загружаются из открытых источников в форматах JSON, CSV и TXT. Обработка осуществляется с использованием языка Python: данные парсятся, нормализуются и импортируются в реляционную базу данных (SQLite). Связи между таблицами реализуются по ключевым полям (например, идиома).»
+
+---
+
+# 🔥 Если хочешь усилить проект
+
+Могу дальше сделать:
+
+* 📊 ER-диаграмму (очень просят на защите)
+* 🧱 SQL-скрипты создания всей БД
+* ⚙️ полный пайплайн: «скачал → загрузил → работает»
+
+Скажи 👍

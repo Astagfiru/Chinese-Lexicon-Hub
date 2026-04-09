@@ -1,0 +1,31 @@
+kind = "slides"
+previewPath = "/sinolingua-presentation/"
+title = "Sinolingua Guide — Презентация"
+version = "1.0.0"
+id = "artifacts/sinolingua-presentation"
+router = "path"
+
+[[integratedSkills]]
+name = "slides"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/sinolingua-presentation/" ]
+localPort = 22147
+
+[services.development]
+run = "pnpm --filter @workspace/sinolingua-presentation run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/sinolingua-presentation", "run", "build" ]
+publicDir = "artifacts/sinolingua-presentation/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22147"
+BASE_PATH = "/sinolingua-presentation/"
