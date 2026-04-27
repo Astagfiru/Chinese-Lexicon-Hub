@@ -1,5 +1,4 @@
 uploads = []
-outputs = []
 
 [[generated]]
 id = "opnv3vwUTpOG5bswH8X-_"
@@ -12,3 +11,9 @@ id = "Hs2ANua8e2RYGLs0JHA30"
 uri = "file://artifacts/sinolingua-presentation/public/hero_bg.png"
 type = "image"
 title = "generated_image"
+
+[[outputs]]
+id = "I4BL8aGArBfJrzEB-wV33"
+uri = "file://.local/outputs/Chinese-Lexicon-Hub.pdf"
+type = "pdf"
+title = "Chinese Lexicon Hub.pdf"
